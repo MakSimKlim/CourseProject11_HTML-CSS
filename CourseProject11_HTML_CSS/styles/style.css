@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+}
+
+.background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    background-size: cover;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 30px 0 0 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-right /*для размещения значка языка справа*/
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50%; /* Подстраиваем высоту по высоте header */
+    margin: 0 20px 0 0; 
+}
+
+.flag-icon {
+    font-size: 15px; /* Настройте размер по вашему усмотрению */
+}
+
+p
+{
+	margin: 20px 0 20px 20px;
+	
+}
+
+.h
+{
+	margin: 20px 20px 0 20px;
+	background: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+    position: relative;
+    animation: backgroundChange 5s infinite alternate;
+}
+
+
+
+@keyframes TextAnim /*анимация для текста в баннере*/
+{
+	from {margin-left:0px;}
+	to {margin-left: 400px;}
+}
+
+#banner 
+{
+    background: #ffdd57;
+    color: #333;
+    text-align: center;
+    padding: 1rem;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 60px; /* Учитываем высоту header */
+    z-index: 500;
+	box-shadow: 0px 20px 30px rgba(0,0,0,0.7); /* Сильное смещение тени вправо и вниз */
+	transition: color 0.3s ease; /* Плавный переход цвета */
+    white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+
+}
+
+/* При наведении на #services, изменяем цвет текста в #banner */
+#banner:hover 
+{
+    color: white; /* Цвет текста при наведении */
+}
+
+ /* Стили для текста в баннере */
+#banner p 
+{
+    font-weight: bold; /* Жирный текст */
+    font-size: 1.5em; /* Размер шрифта */
+    animation: TextAnim 5s linear alternate infinite; /* Применяем Бесконечную анимацию MyAnim */ 
+}
+
+section {
+    padding: 4rem 1rem 2rem;
+    margin-top: 120px; /* Учитываем высоту header и немного отступаем */
+    
+}
+
+@keyframes backgroundChange 
+{
+    0% { background-color: rgba(255, 255, 255, 0.8); }
+    25% { background-color: rgba(255, 105, 97, 0.8); } /* Насыщенный красный */
+    50% { background-color: rgba(135, 206, 250, 0.8); } /* Насыщенный голубой */
+    75% { background-color: rgba(64, 224, 208, 0.8); } /* Насыщенный бирюзовый */
+    100% { background-color: rgba(144, 238, 144, 0.8); } /* Насыщенный зеленый */
+}
+
+
+#home 
+{
+    
+    background-image: url('http://mediakartz.com/images/bg1final.jpg');
+	background-color: grey;
+    background-size: cover; /* Чтобы изображение покрывало весь блок */
+    background-repeat: no-repeat; /* Чтобы изображение не повторялось */
+    background-position: center center; /* Чтобы изображение центрировалось */
+	background-opacity: 0.5; /* устанавливаем прозрачность 50% */
+    text-align: center;
+    width: 100%; /* Ширина 100% от родительского элемента */
+}
+
+#firmname
+{
+color: FireBrick;
+font-size: 5em;
+font-style: italic;
+font-weight: bolt;
+text-transform: uppercase;	
+	
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 30%;
+    box-shadow: 20px 20px 20px rgba(0,0,0,0.7); /* Сильное смещение тени вправо и вниз */
+    margin: 1rem 0;
+	transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+.service:hover 
+{
+    color: FireBrick; /* Цвет текста при наведении */
+	font-weight: bold; /* Жирный текст */
+}
+
+
+.service h3 {
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.float-left 
+{
+float: left;
+margin: 0 20px 20px 21px;
+}
+
+.float-right 
+{
+float: right;
+margin: 0 10px 20px 20px;
+}
+
+@media (max-width: 768px) /*для правильного отображения сайта на разных устройствах с различными размерами экранов*/
+{
+    .services-container 
+	{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service 
+	{
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) /*для правильного отображения сайта на разных устройствах с различными размерами экранов*/
+{
+    header nav ul 
+	{
+        flex-direction: column;
+    }
+
+    header nav ul li 
+	{
+        margin: 0.5rem 0;
+    }
+
+    section 
+	{
+        padding: 3rem 1rem 1rem;
+    }
+}
